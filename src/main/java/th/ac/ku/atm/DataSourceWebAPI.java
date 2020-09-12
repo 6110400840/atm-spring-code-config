@@ -1,12 +1,8 @@
 package th.ac.ku.atm;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
 import java.util.HashMap;
 import java.util.Map;
 
-@Configuration
 public class DataSourceWebAPI implements DataSource{
 
     @Override
@@ -19,21 +15,6 @@ public class DataSourceWebAPI implements DataSource{
         customers.put(3, new Customer(3, "ฝน", 3456, 3000));
 
         return customers;
-    }
-
-    @Bean
-    public DataSource dataSource() {
-        return new DataSourceDB();
-    }
-
-    @Bean
-    public Bank bank() {
-        return new Bank("My Bank", dataSource());
-    }
-
-    @Bean
-    public ATM atm() {
-        return new ATM(bank());
     }
 
 }
