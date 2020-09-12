@@ -1,8 +1,5 @@
 package th.ac.ku.atm;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class ATM {
     private Bank bank;
     private Customer loginCustomer;

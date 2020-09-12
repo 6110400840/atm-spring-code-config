@@ -6,13 +6,11 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-@Component
 public class Bank {
     private String name;
     private Map<Integer, Customer> customers;
     private DataSource dataSource;
 
-    @Autowired
     public Bank(@Value("${bankname}") String name, DataSource dataSource) {
         this.name = name;
         this.dataSource = dataSource;
