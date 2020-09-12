@@ -1,9 +1,5 @@
 package th.ac.ku.atm;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-
 import java.util.Map;
 
 public class Bank {
@@ -11,7 +7,7 @@ public class Bank {
     private Map<Integer, Customer> customers;
     private DataSource dataSource;
 
-    public Bank(@Value("${bankname}") String name, DataSource dataSource) {
+    public Bank(String name, DataSource dataSource) {
         this.name = name;
         this.dataSource = dataSource;
         this.customers = dataSource.readCustomers();
